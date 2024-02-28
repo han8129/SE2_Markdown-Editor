@@ -84,19 +84,23 @@ const BLOCK_QUOTE = [
     }
     ,{
         input: ">  Hello World!\n>\n  > Hi Mom! I'm on TV!"
-        ,output: "<blockquote>Hello World!<br><br>Hi Mom! I'm on TV</p></blockquote>"
+        ,output: "<blockquote>Hello World!<br><br>Hi Mom! I'm on TV!</p></blockquote>"
+    }
+    // a 1 or more white space should be after the ">" character
+    // this can be achieved using the regex /\s+/
+    ,{
+        input: ">  Hello World!   \n  >Hi Mom! I'm on TV!"
+        ,output: "<blockquote>Hello World!</blockquote><p>>Hi Mom! I'm on TV!</p>"
     }
     ,{
-        input: ">  Hello World   \n  >Hi Mom! I'm on TV!"
-        ,output: "<blockquote><p>Hello World! >Hi Mom! I'm on TV</p></blockquote>"
+        input: ">  Hello World!   \n  > Hi Mom! I'm on TV!"
+        ,output: "<blockquote>Hello World!<br>Hi Mom! I'm on TV!</blockquote>"
     }
     ,{
-        input: ">  Hello World   \n  >Hi Mom! I'm on TV!"
-        ,output: "<blockquote><p>Hello World! >Hi Mom! I'm on TV</p></blockquote>"
-    }
-    ,{
-        input: ">  Hello World   \n \n  >Hi Mom! I'm on TV!"
-        ,output: "<blockquote><p>Hello World!</p><p>Hi Mom! I'm on TV</p></blockquote>"
+        input: ">  Hello World!   \n \n  >Hi Mom! I'm on TV!"
+        ,output: "<blockquote>Hello World!</blockquote>"
+            + "<p></p>"
+            + "<p>Hi Mom! I'm on TV!</p>"
     }
 ];
 
@@ -105,3 +109,15 @@ describe.each(HEADING)('Parsing heading', ({input, output}) => {
         expect(parse(input)).toBe(output);
     })
 } );
+
+describe.each(FORMATING)('Parsing heading', ({input, output}) => {
+    test(input, () => {
+        expect(parse(input)).toBe(output);
+    })
+} );
+
+describe.each(BLOCK_QUOTE)('Parsing heading', ({input, output}) => {
+    test(input, () => {
+        expect(parse(input)).toBe(output);
+    })
+});
