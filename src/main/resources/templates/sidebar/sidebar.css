@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Literata'
+);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.wrapper{
+    height: 100%;
+    width: 50px;
+    position: relative;
+}
+input[type="checkbox"]{
+    display: none;
+}
+.wrapper .sidebarbtn{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    height: 45px;
+    width: 45px;
+    z-index: 999;
+    color: #f2f2f2;
+    background: #4a4a4a;
+    border: 1px solid #333;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 23px;
+    transition: all 0.3s ease;
+}
+#btn:checked ~ .sidebarbtn{
+left: 247px;
+}
+#btn:checked ~ .sidebarbtn{
+    content: "\f00d";
+  }
+.wrapper #sidebar{
+    position: fixed;
+    height: 100%;
+    width: 270px;
+    background: #404040;
+    overflow: hidden;
+    left: -270px;
+    transition: all 0.3s ease;
+
+}
+#btn:checked ~ #sidebar{
+    left: 0;
+}
+#sidebar .UserName{
+    color: #fff;
+    font-size: rgba(255, 255, 255, 0.133);
+    font-weight: 25px;
+    line-height: 65px;
+    background-color: #333;
+    text-align: left;
+}
+#sidebar .list-items{
+  position: relative;
+  background: #404040;
+  height: 100%;
+  width: 100%;
+  letter-spacing: normal;
+  list-style: none;
+}
+#sidebar .list-items li{
+   padding: 10px;
+   line-height: 20px;
+   white-space:    nowrap;
+   border-top: 1px solid rgba(255, 255, 255, 0.1);
+   border-bottom: 1px solid #333;
+   transition: all 0.2s ease;
+  }
+  #sidebar .list-items li:hover {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 0 10px 3px #222;
+
+  }
+  #sidebar .list-items li a {
+  color:#fff ;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  height: 100%;
+  width: 100%;
+  display: block;
+  }
+  #sidebar .list-items li a.list-items {
+    color:#fff ;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+ 
