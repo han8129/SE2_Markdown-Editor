@@ -1,0 +1,127 @@
+/* Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    width: 100%;
+    min-height: auto;
+    background-color: s#f8f9fa; /* Light gray background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333; /* Main text color */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: #343a40; /* Dark background */
+    color: #fff; /* White text */
+    text-align: left;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    justify-content: right;
+    align-items: flex-start;
+    padding: 0;
+}
+
+/* Wrapper Styles */
+.wrap {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0;
+}
+
+/* Left Panel Styles */
+.wrap-left {
+    flex: 1;
+    margin-right: 2px;
+    border: 1px solid #ced4da; 
+}
+
+textarea, .preview {
+    width: calc(100% - 4px);
+    height: calc(100vh - 80px); /* Fixed height for both textarea and preview */
+    min-height: 300px;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 16px; /* Text size for both textarea and preview */
+    resize: none; /* Disable textarea resizing */
+    transition: border-color 0.3s ease;
+    
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #007bff; /* Blue border on focus */
+}
+
+/* Right Panel Styles */
+.wrap-right {
+    flex: 1;
+    margin-left: 2px;
+    border: 1px solid #ced4da; 
+    overflow-y: auto;
+    
+}
+
+.preview {
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    overflow-y: auto;
+    word-wrap: break-word; /* Break words when necessary */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer small {
+    color: #777; /* Gray text */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .wrap {
+        flex-direction: column;
+    }
+
+    .wrap-left,
+    .wrap-right {
+        margin-right: 0;
+    }
+
+    textarea {
+        margin-bottom: 20px;
+    }
+}
+
+textarea::placeholder {
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.3); /* Adjust opacity for faded effect */
+}

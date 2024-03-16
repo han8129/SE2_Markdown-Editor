@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Editor</title>
+    <link rel="stylesheet" href="../static/css/UI.css">
+</head>
+<body>
+    <header>
+        <h1>Markdown Editor</h1>
+    </header>
+    <div class="container">
+        <div class="wrap">
+            <div class="wrap-left">
+                <textarea id="editor" cols="30" rows="10" placeholder="Type your text here"></textarea>
+            </div>
+            <div class="wrap-right">
+                <div class="preview"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Include Mermaid library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.0/mermaid.min.js"></script>
+    <!-- Initialize Mermaid -->
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <!-- Include KaTeX library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+    <!-- Include KaTeX CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+    <!-- Include the auto-render extension for KaTeX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+    <!-- Initialize KaTeX auto-render -->
+    <script>document.addEventListener("DOMContentLoaded", function(){ renderMathInElement(document.body); });</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.9/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+    <script src="../static/js/UI.js" defer></script>
+</body>
+</html>
