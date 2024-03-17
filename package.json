@@ -1,11 +1,13 @@
 {
   "devDependencies": {
     "jest": "^29.7.0"
-  }
-  ,"scripts": {
-      "test": "jest"
+  },
+  "scripts": {
+    "test": "jest"
   },
   "jest": {
-    "roots": ["src/main/resources/tests"]
+    "roots": [
+      "src/main/resources/tests"
+    ]
   }
 }
