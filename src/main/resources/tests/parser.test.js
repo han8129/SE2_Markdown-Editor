@@ -53,12 +53,12 @@ const FORMATING = [
     ,{
         input: "*Hello World!\nBe yourself; everyone else is already taken."
         ,output: "<p><i>*Hello World!</i></p>"
-        + "<p><i>Be yourself; everyone else is already taken.</i></p>"
+        + "<p>Be yourself; everyone else is already taken.</p>"
     }
     ,{
         input: "*Hello World!*\nBe yourself; everyone else is already taken."
-        ,output: "<p><i>*Hello World!</i></p><p>Be yourself; everyone else is already taken.</p>"
-        + "<p><i>Be yourself; everyone else is already taken.</i></p>"
+        ,output: "<p><i>Hello World!</i></p>" +
+       "<p>Be yourself; everyone else is already taken.</p>"
     }
     ,{
         input: "***Hello World!\nBe yourself; everyone else is already taken."
